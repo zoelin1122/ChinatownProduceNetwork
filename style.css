@@ -108,6 +108,8 @@ section {
 }
 
 .carousel {
+  padding: auto;
+  margin-top: 5vh;
   margin-left: -10vw;
   width: 100vw;
   overflow-x: scroll;
@@ -120,17 +122,30 @@ section {
 
 .carousel-item {
   width: 30vw;
-  height: 300px;
+  height: fit-content;
   margin-right: 0px;
   /* background-color: #ccc; */
-  display: flex;
-  /* justify-content: center; */
+  display: grid;
+  justify-content: center;
   align-items: center;
-  font-size: 24px;
+  text-align: center;
+  font-size: .6rem;
+  line-height: .6rem;
   border-left: 1px solid #000;
   border-top:  1px solid #000;
   border-bottom: 1px solid #000;
-
+}
+.carousel-item2 {
+  border-bottom:  1px solid #000;
+  align-items: bottom;
+  font-size: .6rem;
+  line-height: .6rem;
+  justify-content: center;
+  padding: 2% 0 ;
+  text-align: center;
+  height: .6rem;
+  color: black;
+  background-color: white;
 }
 
 .containerAnimate {
