@@ -29,20 +29,20 @@ window.addEventListener("scroll", function() {
   }
 });
 
-const carousel = document.querySelector('.carousel');
-const carouselItems = document.querySelector('.carousel-items');
-const carouselItem = document.querySelectorAll('.carousel-item');
+// const carousel = document.querySelector('.carousel');
+// const carouselItems = document.querySelector('.carousel-items');
+// const carouselItem = document.querySelectorAll('.carousel-item');
 
-let scrollPos = 0;
-let width = carousel.offsetWidth;
+// let scrollPos = 0;
+// let width = carousel.offsetWidth;
 
-window.addEventListener('resize', () => {
-  width = carousel.offsetWidth;
-});
+// window.addEventListener('resize', () => {
+//   width = carousel.offsetWidth;
+// });
 
-carousel.addEventListener('scroll', () => {
-  scrollPos = carousel.scrollLeft;
-});
+// carousel.addEventListener('scroll', () => {
+//   scrollPos = carousel.scrollLeft;
+// });
 
 // setInterval(() => {
 //   scrollPos += width;
