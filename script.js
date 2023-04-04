@@ -71,3 +71,36 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+const videos = document.querySelectorAll('.video-container video');
+
+videos.forEach(video => {
+  video.addEventListener('mouseenter', () => {
+    video.play();
+  });
+
+  video.addEventListener('mouseleave', () => {
+    video.pause();
+  });
+});
+
+const navbar = document.querySelector('.navbar');
+const navbartitle = document.querySelector('.navbar-title');
+const navbarbuttons = document.querySelectorAll('.navbar-button');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > navbar.offsetHeight) {
+    navbar.classList.add('small');
+    navbartitle.classList.add('small');
+    navbarbuttons.forEach(navbarbutton => {
+      navbarbutton.classList.add('small');
+    })
+  } else {
+    navbar.classList.remove('small');
+    navbartitle.classList.remove('small');
+    navbarbuttons.forEach(navbarbutton => {
+      navbarbutton.classList.remove('small');
+    })
+  }
+});

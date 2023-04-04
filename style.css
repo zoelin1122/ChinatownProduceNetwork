@@ -7,7 +7,6 @@ body {
 }
 
 
-
 .marquee {
   position: fixed;
   bottom: 1.5vh;
@@ -55,6 +54,12 @@ section {
   z-index: 1;
   padding: 10px 50px;
   border-bottom: 1px solid #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.small{
+  height: 6vh;
+  font-size: 20px;
 
 }
 
@@ -67,7 +72,13 @@ section {
   text-decoration: none;
   font-size: 25px;
   font-weight: bolder;
+  transition: all 0.3s ease-in-out;
 }
+.navbar-title.small {
+  padding: 12.5px 20px;
+  font-size: 20px;
+}
+
 
 /* Style the buttons */
 .navbar-buttons {
@@ -86,6 +97,13 @@ section {
   display: inline-block;
   font-size: 25px;
   cursor: pointer;
+  font-weight: bolder;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-button.small {
+  padding: 12.5px 20px;
+  font-size: 20px;
   font-weight: bolder;
 }
 
@@ -151,7 +169,7 @@ section {
   border-bottom: 1px solid #000;
 }
 .carousel-item2 {
-  border-bottom:  1px solid #000;
+  border-top:  1px solid #000;
   align-items: bottom;
   font-size: .6rem;
   line-height: .6rem;
