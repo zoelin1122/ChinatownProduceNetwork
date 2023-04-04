@@ -44,16 +44,16 @@ carousel.addEventListener('scroll', () => {
   scrollPos = carousel.scrollLeft;
 });
 
-setInterval(() => {
-  scrollPos += width;
-  if (scrollPos >= carouselItems.offsetWidth) {
-    scrollPos = 0;
-  }
-  carousel.scrollTo({
-    left: scrollPos,
-    behavior: 'smooth'
-  });
-}, 5000);
+// setInterval(() => {
+//   scrollPos += width;
+//   if (scrollPos >= carouselItems.offsetWidth) {
+//     scrollPos = 0;
+//   }
+//   carousel.scrollTo({
+//     left: scrollPos,
+//     behavior: 'smooth'
+//   });
+// }, 5000);
 
 const imageContainer = document.querySelector('.image-container');
 const imageItems = document.querySelectorAll('.image-item');
