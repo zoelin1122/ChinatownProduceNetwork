@@ -104,3 +104,17 @@ window.addEventListener('scroll', () => {
     })
   }
 });
+
+// const banner = document.querySelector('.banner');
+// const bannerOffsetTop = banner.offsetTop;
+
+// window.addEventListener('scroll', () => {
+//   // Check if the banner is at the top of the page
+//   if (window.pageYOffset >= bannerOffsetTop) {
+//     // Add the "sticky" class to the banner
+//     banner.classList.add('sticky');
+//   } else {
+//     // Remove the "sticky" class from the banner
+//     banner.classList.remove('sticky');
+//   }
+// });
