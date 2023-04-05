@@ -122,6 +122,53 @@ window.addEventListener('scroll', () => {
 //   }
 // });
 
+const cells = document.querySelectorAll(".cell");
+const table = document.querySelector(".table");
+
+function handleMouseOver(e) {
+  // Set the size of the hovered cell
+  this.classList.add("enlarge");
+
+  // Set the size of the other cells
+  const sameRowCells = [...cells].filter(cell => cell.parentNode === this.parentNode);
+  // const sameColCells = [...cells].filter(cell => (cell.parentNode !== this.parentNode) && this.parentNode.indexOf(this) === cell.parentNode.indexOf(cell));
+  const otherCells = [...cells].filter(cell => cell !== sameRowCells);
+  const shrinkWidthSize = (80 - (this.width)) / (sameRowCells.length - 1);
+  const shrinkHeightSize = (500 - this.height) / (otherCells.length - 1);
+
+  sameRowCells.forEach((cell, index) => {
+    if (!cell.classList.contains("enlarge")) {
+      cell.classList.add("shrink-width");
+      cell.classList.add("same-row"); 
+      cell.style.width = `${shrinkWidthSize}vw`;
+    }
+  });
+
+  otherCells.forEach((cell, index) => {
+    if (!cell.classList.contains("enlarge")) {
+      cell.classList.add("shrink-height");
+      cell.classList.add("same-col");
+      cell.style.height = `${shrinkHeightSize}px`;
+    }
+  });
+}
+
+
+function handleMouseOut(e) {
+  // Reset the size of all cells
+  cells.forEach(cell => {
+    cell.classList.remove("enlarge");
+    cell.classList.remove("shrink-width");
+    cell.classList.remove("shrink-height");
+    cell.classList.remove("same-row");
+    cell.classList.remove("same-col");
+  });
+}
+
+cells.forEach(cell => {
+  cell.addEventListener("mouseover", handleMouseOver);
+  cell.addEventListener("mouseout", handleMouseOut);
+});
 
 
 // Set up the container and profiles
