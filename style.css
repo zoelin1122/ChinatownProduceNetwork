@@ -23,8 +23,9 @@ body {
   /* overflow: hidden; */
   margin-top: .2em;
   padding-top: .5em;
-  margin-left: -100vw;
+  /* margin-left: -100vw; */
   background-color: #fffef3;
+  z-index: 9;
 }
 
 .title {
@@ -55,12 +56,13 @@ section {
   padding: 10px 50px;
   border-bottom: 1px solid #000;
   transition: all 0.3s ease-in-out;
+  z-index: 8;
 }
 
 .navbar.small{
   height: 6vh;
   font-size: 20px;
-
+  z-index: 8;
 }
 
 /* Style the title */
@@ -282,3 +284,57 @@ video{
   line-height: 1.5;
 }
 
+/* #dragableprofile-container {
+  width: 100vw;
+  height: 400px;
+  position: relative;
+} */
+
+#dragableprofile-container {
+  position: absolute;
+  z-index: 1;
+  width: 80vw;
+  height: 450px;
+}
+
+#line-container {
+  position: absolute;
+  z-index: 0;
+  width: 80vw;
+  height: 100%;
+}
+
+.dragableprofile {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  cursor: move;
+  background-color: inherit;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.dragableprofile img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.dragableprofile h3 {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.dragableprofile p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+.line {
+  position: absolute;
+  border: 1px solid black;
+  z-index: -2;
+}
