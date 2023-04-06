@@ -5,7 +5,7 @@ import { CameraControls, Environment, useGLTF, OrbitControls} from "@react-three
 
 
 function Scene() {
-  const gltf = useGLTF("/fruit.gltf");
+  const gltf = useGLTF("assets/Fruit.gltf");
 
   return (
     <Suspense fallback={null}>
@@ -16,10 +16,10 @@ function Scene() {
 
 function App() {
   return (
-    <Canvas camera={{ fov: 3, position: [5, 5, 5] }}>
+    <Canvas camera={{ fov: 2, position: [4, 4, 4] }}>
       {/* <CameraControls makeDefault /> */}
       <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
-      <Environment preset="dawn"  />
+      <Environment preset="dawn"  background/>
       <Scene />
     </Canvas>
   );
