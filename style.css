@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   height: 2000px; /* Set the height of the page to enable scrolling */
   font-family: Optima, Verdana, Geneva, Tahoma, sans-serif;
   background-color: #fffef3;
@@ -40,9 +42,35 @@ body {
   margin: 13vh 0vw 0vh;
 }
 
+.fruit-container {
+  display: flex;
+  position: relative;
+}
+
+.sticky-div {
+  width: 60%;
+  height: 60vh;
+  position: sticky;
+  top: 20vh;
+  background-color: inherit;
+}
+
+.scroll-div {
+  width: 40%;
+  height: auto;
+  background-color: inherit;
+  position: relative;
+}
+
+/* Adjust position of scroll-div after sticky-div is released */
+.sticky-div ~ .scroll-div {
+  margin-top: 25vh;
+}
+
 section {
   margin: 50px 10vw 100px;
   padding: 0;
+  height:auto;
 }
 
 .navbar {
@@ -56,7 +84,7 @@ section {
   padding: 10px 50px;
   border-bottom: 1px solid #000;
   transition: all 0.3s ease-in-out;
-  z-index: 8;
+  z-index: 4;
 }
 
 .navbar.small{
@@ -299,7 +327,7 @@ video{
 
 #line-container {
   position: absolute;
-  z-index: 0;
+  z-index: auto;
   width: 80vw;
   height: 100%;
 }
@@ -318,7 +346,7 @@ video{
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .dragableprofile h3 {
@@ -336,7 +364,7 @@ video{
 .line {
   position: absolute;
   border: 1px solid black;
-  z-index: -2;
+  /* z-index: -2; */
 }
 /* 
 .grid-container {
@@ -469,4 +497,80 @@ video{
   align-self: flex-end;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-variant-numeric: normal;
+}
+
+/* 
+
+.parallax {
+  height: 70vh;
+  width: auto;
+}
+
+.bobbing-div {
+  animation-name: bob;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes bob {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+.parallax-container{
+  height:80vh;
+}
+
+
+.parallax {
+  position: absolute;
+  top: 340vh;
+  height: 100vh;
+  width: 100vw;
+  margin-left: -10vw;
+  margin-top: -10vw;
+  padding-top: 8vw;
+  overflow-x: visible;
+  overflow-y: scroll;
+  perspective: 300px;
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+
+.parallax__group {
+  transition: transform 0.5s;
+}
+
+#profile1 {
+  transform: translateZ(10px) scale(.9);
+  z-index: 10;
+}
+
+#profile2 {
+  transform: translateZ(0);
+  z-index: 10;
+}
+
+#profile3 {
+  transform: translateZ(-40px) scale(1.1);
+  z-index: 10;
+}
+
+#profile4 {
+  transform: translateZ(-100px) scale(1.2);
+  z-index: 10;
 }

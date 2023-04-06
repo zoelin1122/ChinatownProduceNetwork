@@ -261,14 +261,16 @@ const profile3 = document.getElementById("profile3");
 const profile4 = document.getElementById("profile4");
 
 // Set the initial positions of the profiles
-profile1.style.left = "10px";
-profile1.style.top = "50px";
-profile2.style.left = "900px";
-profile2.style.top = "250px";
-profile3.style.left = "630px";
-profile3.style.top = "-30px";
-profile4.style.left = "300px";
-profile4.style.top = "300px";
+profile1.style.left = "210px";
+profile1.style.top = "150px";
+profile2.style.left = "1000px";
+profile2.style.top = "300px";
+profile3.style.left = "730px";
+profile3.style.top = "20px";
+profile4.style.left = "400px";
+profile4.style.top = "400px";
+
+
 
 window.addEventListener('scroll', function() {
   updateLines();

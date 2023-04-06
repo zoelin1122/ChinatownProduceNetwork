@@ -40,10 +40,18 @@
         <img src="assets/Banner.png" alt="Image 1">
       </div>
       <h1 class="title">CHINATOWN FOOD NETWORK: <br> A STORY OF FOOD, IMMIGRATION, ZONING, & INFORMALITY</h1>
+      
+      
       <section id="intro">
-        <h1>Introfruit</h1>
-        <p>This is some text in section A.</p>
-        <div id="root" style="width:100%; height: 50vh;"></div>
+        <div class="fruit-container">
+          <div class="sticky-div">
+            <h1>Introfruit</h1>
+            <div class="fruit" id="root" style="width: 100%; height: 80%;"></div>
+          </div>
+          <div class="scroll-div">
+            <div class="text">Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit. <br>Sed feugiat, eros ac gravida facilisis, <br>lorem ipsum consectetur quam,<br> vel maximus turpis nunc sed massa. <br>Nam faucibus gravida eros.<br> Nunc ac velit nisi. <br>Duis non commodo dolor,<br> sed commodo risus. <br>In at diam nec mauris sodales venenatis.<br> Ut mattis lacus quis tellus pharetra, in varius metus tempor. Duis vel lectus euismod, <br>dignissim nibh vel, bibendum ex. Nam et commodo velit.<br> Suspendisse vitae magna id enim egestas consequat.<br> Donec commodo molestie orci, <br>sit amet laoreet est mattis a.<br> Vivamus facilisis neque at felis vehicula viverra. <br>Praesent ornare arcu vel feugiat bibendum.Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit. <br>Sed feugiat, eros ac gravida facilisis, <br>lorem ipsum consectetur quam,<br> vel maximus turpis nunc sed massa. <br>Nam faucibus gravida eros.<br> Nunc ac velit nisi. <br>Duis non commodo dolor,<br> sed commodo risus. <br>In at diam nec mauris sodales venenatis.<br> Ut mattis lacus quis tellus pharetra, in varius metus tempor. Duis vel lectus euismod, <br>dignissim nibh vel, bibendum ex. Nam et commodo velit.<br> Suspendisse vitae magna id enim egestas consequat.<br> Donec commodo molestie orci, <br>sit amet laoreet est mattis a.<br> Vivamus facilisis neque at felis vehicula viverra. <br>Praesent ornare arcu vel feugiat bibendum.Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit. <br>Sed feugiat, eros ac gravida facilisis, <br>lorem ipsum consectetur quam,<br> vel maximus turpis nunc sed massa. <br>Nam faucibus gravida eros.<br> Nunc ac velit nisi. <br>Duis non commodo dolor,<br> sed commodo risus. <br>In at diam nec mauris sodales venenatis.<br> Ut mattis lacus quis tellus pharetra, in varius metus tempor. Duis vel lectus euismod, <br>dignissim nibh vel, bibendum ex. Nam et commodo velit.<br> Suspendisse vitae magna id enim egestas consequat.<br> Donec commodo molestie orci, <br>sit amet laoreet est mattis a.<br> Vivamus facilisis neque at felis vehicula viverra. <br>Praesent ornare arcu vel feugiat bibendum.</div>
+          </div>
+        </div>
         <script type="module" src="fruit.jsx"></script>
       </section>
 
@@ -190,31 +198,33 @@
       </section> -->
 
       <section id="people2">
-        <h1>People: The Social Network of Care</h1>
-        <div style="height:70vh">
-          <div id="dragableprofile-container">
-            <div class="dragableprofile" id="profile1">
-              <img src="assets/Consumer2.jpg" alt="Profile Image">
-              <h3>CONSUMER</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed nibh a tortor efficitur faucibus nec eget enim.</p>
+        <div class="parallax-container">
+          <h1>People: The Social Network of Care</h1>
+          <div class = "parallax">
+            <div id="dragableprofile-container" class="parallax__group">
+              <div class="dragableprofile bobbing-div" id="profile1">
+                <img src="assets/Consumer2.jpg" alt="Profile Image">
+                <h3>CONSUMER</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed nibh a tortor efficitur faucibus nec eget enim.</p>
+              </div>
+              <div class="dragableprofile bobbing-div" id="profile2">
+                <img src="assets/Vendor.jpg" alt="Profile Image">
+                <h3>VENDOR</h3>
+                <p>Ut sed sapien ligula. Aenean vel felis neque. Sed ac fermentum justo.</p>
+              </div>
+              <div class="dragableprofile bobbing-div" id="profile3">
+                <img src="assets/Wholesaler.jpg" alt="Profile Image">
+                <h3>WHOLESALER</h3>
+                <p>Nam vel risus ac nisl sodales tristique. Proin eget tristique libero.</p>
+              </div>
+              <div class="dragableprofile bobbing-div" id="profile4">
+                <img src="assets/Farmer.jpg" alt="Profile Image">
+                <h3>FARMER</h3>
+                <p>Nam vel risus ac nisl sodales tristique. Proin eget tristique libero.</p>
+              </div>
             </div>
-            <div class="dragableprofile" id="profile2">
-              <img src="assets/Vendor.jpg" alt="Profile Image">
-              <h3>VENDOR</h3>
-              <p>Ut sed sapien ligula. Aenean vel felis neque. Sed ac fermentum justo.</p>
-            </div>
-            <div class="dragableprofile" id="profile3">
-              <img src="assets/Wholesaler.jpg" alt="Profile Image">
-              <h3>WHOLESALER</h3>
-              <p>Nam vel risus ac nisl sodales tristique. Proin eget tristique libero.</p>
-            </div>
-            <div class="dragableprofile" id="profile4">
-              <img src="assets/Farmer.jpg" alt="Profile Image">
-              <h3>FARMER</h3>
-              <p>Nam vel risus ac nisl sodales tristique. Proin eget tristique libero.</p>
-            </div>
+            <div id="line-container"></div>
           </div>
-          <div id="line-container"></div>
         </div>
       </section>
 
@@ -227,6 +237,7 @@
       
       <section id="scrollchange">
         <h1>Interactive Timeline</h1>
+        <img src="assets/colored.jpg" style="width:100%">
         <section id="e">
           <div class="image-container">
             <img src="frame1.jpg" class="image-item" data-scroll="0">
