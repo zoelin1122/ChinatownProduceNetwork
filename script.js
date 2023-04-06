@@ -263,9 +263,9 @@ const profile4 = document.getElementById("profile4");
 // Set the initial positions of the profiles
 profile1.style.left = "210px";
 profile1.style.top = "150px";
-profile2.style.left = "1000px";
+profile2.style.left = "970px";
 profile2.style.top = "300px";
-profile3.style.left = "730px";
+profile3.style.left = "700px";
 profile3.style.top = "20px";
 profile4.style.left = "400px";
 profile4.style.top = "400px";
