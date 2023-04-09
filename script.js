@@ -134,7 +134,7 @@ function handleMouseOver(e) {
   // const sameColCells = [...cells].filter(cell => (cell.parentNode !== this.parentNode) && this.parentNode.indexOf(this) === cell.parentNode.indexOf(cell));
   const otherCells = [...cells].filter(cell => cell !== sameRowCells);
   const shrinkWidthSize = (80 - (this.width)) / (sameRowCells.length - 1);
-  const shrinkHeightSize = (500 - this.height) / (otherCells.length - 1);
+  const shrinkHeightSize = (600 - this.height) / (otherCells.length - 1);
 
   sameRowCells.forEach((cell, index) => {
     if (!cell.classList.contains("enlarge")) {
