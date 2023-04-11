@@ -5,7 +5,7 @@ import { CameraControls, Environment, useGLTF, OrbitControls, ScrollControls, us
 import * as THREE from "three";
 
 function Scene() {
-  const gltf = useGLTF("assets/Fruit.gltf");
+  const gltf = useGLTF("assets/fruit_small.gltf");
 
   // This hook gives you offets, ranges and other useful things
   const scroll = useScroll();

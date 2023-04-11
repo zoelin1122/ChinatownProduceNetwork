@@ -260,15 +260,25 @@ const profile2 = document.getElementById("profile2");
 const profile3 = document.getElementById("profile3");
 const profile4 = document.getElementById("profile4");
 
+// Prallax Set the initial positions of the profiles
+// profile1.style.left = "210px";
+// profile1.style.top = "150px";
+// profile2.style.left = "970px";
+// profile2.style.top = "300px";
+// profile3.style.left = "700px";
+// profile3.style.top = "20px";
+// profile4.style.left = "400px";
+// profile4.style.top = "400px";
+
 // Set the initial positions of the profiles
-profile1.style.left = "210px";
-profile1.style.top = "150px";
-profile2.style.left = "970px";
-profile2.style.top = "300px";
-profile3.style.left = "700px";
-profile3.style.top = "20px";
-profile4.style.left = "400px";
-profile4.style.top = "400px";
+profile1.style.left = "10px";
+profile1.style.top = "100px";
+profile2.style.left = "870px";
+profile2.style.top = "280px";
+profile3.style.left = "600px";
+profile3.style.top = "0px";
+profile4.style.left = "360px";
+profile4.style.top = "330px";
 
 
 

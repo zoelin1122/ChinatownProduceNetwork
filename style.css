@@ -337,7 +337,7 @@ video{
   position: absolute;
   z-index: 1;
   width: 80vw;
-  height: 450px;
+  height: 90vh;
 }
 
 #line-container {
@@ -489,8 +489,8 @@ video{
     transform: translateY(0);
   }
 }
-/* 
-.parallax-container{
+
+/* .parallax-container{
   height:80vh;
 }
 
