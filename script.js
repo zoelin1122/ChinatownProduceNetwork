@@ -29,6 +29,20 @@ window.addEventListener("scroll", function() {
   }
 });
 
+window.addEventListener("scroll", function() {
+  var videoDiv = document.getElementById("ChangeVid");
+  var video = videoDiv.getElementsByTagName("video")[0];
+  var videoTop = videoDiv.offsetTop;
+  var videoBottom = videoTop + videoDiv.offsetHeight;
+  var windowTop = window.pageYOffset;
+  var windowBottom = windowTop + window.innerHeight;
+  if (windowTop < videoBottom && windowBottom > videoTop) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});
+
 // const carousel = document.querySelector('.carousel');
 // const carouselItems = document.querySelector('.carousel-items');
 // const carouselItem = document.querySelectorAll('.carousel-item');
