@@ -54,9 +54,14 @@ document.addEventListener("mousemove", function(event) {
   var top = viewportOffset.top;
   var x = event.clientX;
   var y = event.clientY;
+  var mid = (window.innerWidth)/2;
   document.querySelectorAll('.text-box').forEach(textBox => {
-  textBox.style.left = (x-100) + "px";
-  textBox.style.top = (y-top) + "px";
+    if (x>mid){
+      textBox.style.left = (x-300) + "px";
+    } else {
+      textBox.style.left = (x-100) + "px";
+    }
+    textBox.style.top = (y-top+50) + "px";
   });
   
 });
