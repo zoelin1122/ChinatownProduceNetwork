@@ -539,3 +539,53 @@ video{
   transform: translateZ(-100px) scale(1.2);
   z-index: 10;
 } */
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.image-wrapper path  {
+  stroke:#00000000;
+  stroke-width: 0;
+  fill: rgba(0, 0, 0, 0);
+  transition: fill 0.2s ease-out;
+}
+.image-wrapper polygon  {
+  stroke:#00000000;
+  stroke-width: 0;
+  fill: rgba(0, 0, 0, 0);
+  transition: fill 0.2s ease-out;
+}
+
+.image-wrapper path:hover {
+  fill: url(#MyGradient);
+}
+.image-wrapper polygon:hover {
+  fill: url(#MyGradient);
+}
+
+.text-box {
+  background: #000000bf;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2%;
+  color: #fffef3;
+  font-size: .8em;
+  display: none;
+  max-width: 50%;
+}

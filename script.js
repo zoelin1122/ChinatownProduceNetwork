@@ -43,6 +43,60 @@ window.addEventListener("scroll", function() {
   }
 });
 
+const hoverTexts = [];
+document.querySelectorAll('.text-box').forEach(div => {
+  hoverTexts.push(div);
+});
+
+document.addEventListener("mousemove", function(event) {
+  var imageWrapper = document.getElementById("timeline");
+  var viewportOffset = imageWrapper.getBoundingClientRect();
+  var top = viewportOffset.top;
+  var x = event.clientX;
+  var y = event.clientY;
+  document.querySelectorAll('.text-box').forEach(textBox => {
+  textBox.style.left = (x-100) + "px";
+  textBox.style.top = (y-top) + "px";
+  });
+  
+});
+
+document.querySelectorAll('path').forEach(path => {
+ var id = path.getAttribute( 'id' )
+
+  path.addEventListener('mouseenter', () => {
+    for (let i = 0; i < hoverTexts.length; i++) {
+      if (hoverTexts[i].getAttribute( 'id' )==id){
+        hoverTexts[i].style.display = 'block';
+      }
+    }
+  });
+
+  path.addEventListener('mouseleave', () => {
+    for (let i = 0; i < hoverTexts.length; i++) {
+      hoverTexts[i].style.display = 'none';
+    }
+  });
+
+});
+
+document.querySelectorAll('polygon').forEach(polygon => {
+  var id = polygon.getAttribute( 'id' )
+  polygon.addEventListener('mouseenter', () => {
+    for (let i = 0; i < hoverTexts.length; i++) {
+      if (hoverTexts[i].getAttribute( 'id' )==id){
+        hoverTexts[i].style.display = 'block';
+      }
+    }
+  });
+
+  polygon.addEventListener('mouseleave', () => {
+    for (let i = 0; i < hoverTexts.length; i++) {
+      hoverTexts[i].style.display = 'none';
+    }
+  });
+});
+
 // const carousel = document.querySelector('.carousel');
 // const carouselItems = document.querySelector('.carousel-items');
 // const carouselItem = document.querySelectorAll('.carousel-item');
