@@ -36,10 +36,14 @@ window.addEventListener("scroll", function() {
   var videoBottom = videoTop + videoDiv.offsetHeight;
   var windowTop = window.pageYOffset;
   var windowBottom = windowTop + window.innerHeight;
-  if (windowTop < videoBottom && windowBottom > videoTop) {
+  if (400 + windowTop < videoBottom && windowBottom > 400 + videoTop) {
     video.play();
+    videoDiv.classList.add('fullscreen');
+    videoDiv.classList.remove('notfullscreen');
   } else {
     video.pause();
+    videoDiv.classList.remove('fullscreen');
+    videoDiv.classList.add('notfullscreen');
   }
 });
 
@@ -61,7 +65,7 @@ document.addEventListener("mousemove", function(event) {
     } else {
       textBox.style.left = (x-100) + "px";
     }
-    textBox.style.top = (y-top+50) + "px";
+    textBox.style.top = (y-top-10) + "px";
   });
   
 });

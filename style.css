@@ -7,6 +7,7 @@ body {
   font-family: Optima, Verdana, Geneva, Tahoma, sans-serif;
   background-color: #fffef3;
   -ms-overflow-style: none;
+  line-height: 28px;
 }
 
 body::-webkit-scrollbar{
@@ -73,12 +74,18 @@ body::-webkit-scrollbar{
 
 /* Adjust position of scroll-div after sticky-div is released */
 .sticky-div ~ .scroll-div {
-  margin-top: 25vh;
+  margin-top: 15vh;
 }
 
 section {
   margin: 50px 10vw 15vh;
   padding: 0;
+  height:auto;
+}
+
+.article {
+  width: auto;
+  margin: 2vh 20vw;
   height:auto;
 }
 
@@ -231,6 +238,24 @@ section {
 video{
   margin-top:5px;
   margin-bottom:5px;
+  transition: width 6s ease;
+}
+
+#ChangeVid {
+  /* transition: all 2s ease-in-out; */
+  transition: all 3s ease;
+  margin: auto;
+}
+.notfullscreen {
+  width:65vw;
+  height: auto;
+  z-index: auto;
+}
+.fullscreen {
+  width: 100vw;
+  height: auto;
+  z-index: 30;
+  position: relative;
 }
 
 .video-container{
@@ -324,7 +349,7 @@ video{
   margin: 10px 0;
   font-size: 14px;
   color: #666;
-  line-height: 1.5;
+  line-height: 0.5em;
 }
 
 /* #dragableprofile-container {
@@ -355,6 +380,7 @@ video{
   background-color: inherit;
   border-radius: 50%;
   text-align: center;
+  line-height: 1em;
 }
 
 .dragableprofile img {
@@ -466,7 +492,7 @@ video{
 
 
 .parallax {
-  height: 70vh;
+  height: 80vh;
   width: auto;
 }
 
