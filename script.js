@@ -106,12 +106,6 @@ document.querySelectorAll('polygon').forEach(polygon => {
   });
 });
 
-document.querySelectorAll('g').forEach(g => {
-  g.addEventListener('click', event => {
-    // Do something when a section is clicked
-    console.log(`Clicked on section ${g.id}`);
-  });
-});
 
 // const carousel = document.querySelector('.carousel');
 // const carouselItems = document.querySelector('.carousel-items');
@@ -386,6 +380,24 @@ updateLines();
 // });
 
 const gs = document.querySelectorAll('.bucket');
+
+
+gs.forEach(g => {
+  g.addEventListener('click', event => {
+    // Do something when a section is clicked
+    console.log(`Clicked on section ${g.id}`);
+    const children = g.children;
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
+      const link = document.createElement("a");
+      link.href = `pages/${g.id}.html`;
+      // link.appendChild(child);
+      // g.appendChild(child)
+      g.appendChild(link)
+    }
+  });
+});
+
 
 gs.forEach(g => {
   g.addEventListener('mouseover', () => {
