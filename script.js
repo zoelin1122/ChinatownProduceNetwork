@@ -106,6 +106,13 @@ document.querySelectorAll('polygon').forEach(polygon => {
   });
 });
 
+document.querySelectorAll('g').forEach(g => {
+  g.addEventListener('click', event => {
+    // Do something when a section is clicked
+    console.log(`Clicked on section ${g.id}`);
+  });
+});
+
 // const carousel = document.querySelector('.carousel');
 // const carouselItems = document.querySelector('.carousel-items');
 // const carouselItem = document.querySelectorAll('.carousel-item');
@@ -366,3 +373,44 @@ window.addEventListener('scroll', function() {
 window.addEventListener('scroll', updateLines);
 
 updateLines();
+
+// const circles = document.querySelectorAll('circle');
+// circles.forEach(circle => {
+//   const color = circle.getAttribute('fill');
+//   if (color == '#fffef3') {
+//      circle.setAttribute('fill', '#231f20');
+//     } else if (color == '#231f20') {
+//       circle.setAttribute('fill', '#fffef3');
+//       console.log(`change ${color}`);
+//   }
+// });
+
+const gs = document.querySelectorAll('.bucket');
+
+gs.forEach(g => {
+  g.addEventListener('mouseover', () => {
+    const circles = g.querySelectorAll('circle');
+    circles.forEach(circle => {
+      const color = circle.getAttribute('fill');
+      if (color == '#fffef3') {
+        console.log(`change ${color}`);
+        circle.setAttribute('fill', '#231f20');
+      } else if (color == '#231f20') {
+        circle.setAttribute('fill', '#fffef3');
+      }
+    });
+  });
+  g.addEventListener('mouseout', () => {
+    const circles = g.querySelectorAll('circle');
+    console.log(`unchange ${g}`);
+
+    circles.forEach(circle => {
+      const color = circle.getAttribute('fill');
+      if (color == '#231f20') {
+        circle.setAttribute('fill', '#fffef3');
+      } else if (color == '#fffef3') {
+        circle.setAttribute('fill', '#231f20');
+      }
+    });
+  });
+});
