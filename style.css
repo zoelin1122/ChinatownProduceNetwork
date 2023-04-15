@@ -85,7 +85,7 @@ section {
 
 .article {
   width: auto;
-  margin: 2vh 20vw;
+  margin: 2vh 22vw;
   height:auto;
 }
 
@@ -246,6 +246,13 @@ video{
   transition: all 3s ease;
   margin: auto;
 }
+
+.diagram-wrapper {
+  /* transition: all 2s ease-in-out; */
+  transition: all 3s ease;
+  margin: auto;
+}
+
 .notfullscreen {
   width:65vw;
   height: auto;
@@ -257,6 +264,17 @@ video{
   z-index: 30;
   position: relative;
 }
+
+.diagram-wrapper.fullscreen {
+  width: 100vw;
+  height: 100%;
+  z-index: 30;
+  position: relative;
+  background-color: #fffef3;
+}
+/* .diagram-wrapper.fullscreen svg {
+  width: 90vw;
+} */
 
 .video-container{
   padding-top:0px;
@@ -616,9 +634,6 @@ video{
   max-width: 50%;
 }
 
-.diagram-wrapper {
-  position: relative;
-}
 
 /* .diagram-wrapper img {
   display: block;
@@ -630,9 +645,9 @@ video{
   /* position: absolute; */
   /* top: 0;
   left: 0; */
-  width: 94%;
+  width: 85%;
   height: auto;
-  margin: 3%;
+  margin: 0 7.5%;
   position: relative;
   display: inline-block;
 }

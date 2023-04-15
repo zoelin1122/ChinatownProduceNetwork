@@ -45,6 +45,16 @@ window.addEventListener("scroll", function() {
     videoDiv.classList.remove('fullscreen');
     videoDiv.classList.add('notfullscreen');
   }
+  var diagramDiv = document.querySelector(".diagram-wrapper");  
+  var diagramTop = diagramDiv.offsetTop;
+  var diagramBottom = diagramTop + diagramDiv.offsetHeight;
+  if (400 + windowTop < diagramBottom && windowBottom > 400 + diagramTop) {
+    diagramDiv.classList.add('fullscreen');
+    diagramDiv.classList.remove('notfullscreen');
+  } else {
+    diagramDiv.classList.remove('fullscreen');
+    diagramDiv.classList.add('notfullscreen');
+  }
 });
 
 const hoverTexts = [];
