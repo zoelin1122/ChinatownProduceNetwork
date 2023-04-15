@@ -381,22 +381,35 @@ updateLines();
 
 const gs = document.querySelectorAll('.bucket');
 
+// gs.forEach(g => {
+//   g.addEventListener('click', event => {
+//     // Do something when a section is clicked
+//     console.log(`Clicked on section ${g.id}`);
+//   });
 
-gs.forEach(g => {
-  g.addEventListener('click', event => {
-    // Do something when a section is clicked
-    console.log(`Clicked on section ${g.id}`);
-    const children = g.children;
-    for (let i = 0; i < children.length; i++) {
-      const child = children[i];
-      const link = document.createElement("a");
-      link.href = `pages/${g.id}.html`;
-      // link.appendChild(child);
-      // g.appendChild(child)
-      g.appendChild(link)
-    }
-  });
-});
+//   const gId = g.getAttribute("id");
+
+//   // Create a new <a> element
+//   const a = document.createElement("a");
+
+//   // Set the href attribute of the <a> element
+//   a.setAttribute("href", `pages/${gId}.html`);
+
+//   var child = g.firstChild
+//   var cln = child.cloneNode(true);
+
+
+//   // Add the <a> element as a sibling of the <g> element
+//   g.insertBefore(a, child.nextSibling);
+  
+//   // Position the <a> element over the <g> element using CSS
+//   a.style.position = "absolute";
+  
+//   console.log(g)
+//   console.log(child)
+//   a.appendChild(cln)
+ 
+// });
 
 
 gs.forEach(g => {
