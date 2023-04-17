@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHINATOWN FOOD NETWORK</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -78,11 +81,14 @@
         </div>
       </section>
 
-      <section id="chinatownmap">
-        <h1>Map of Chinatown</h1>
-        <!-- Embed your webmap here, using the appropriate code for your mapping platform -->
-        
-      </section>
+      <div class="map-container">
+        <div id='map'></div>
+        <!-- <script type='text/javascript' src="map.js"></script>         -->
+        <div class='map-overlay' id='features'>
+          <h2>Manhattan Chinatown's Produce Network in 2005</h2>
+          <div id='pd'><p>Hover over a point!</p></div></div>
+        <div class='map-overlay' id='legend'></div>
+      </div>
 
       <section id="text">
         <div class="article">
@@ -368,7 +374,6 @@
           In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
         </div>
         <h1>DIAGRAM TOPICs</h1>
-
       </section>
 
 

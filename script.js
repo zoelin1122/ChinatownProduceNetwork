@@ -449,3 +449,121 @@ gs.forEach(g => {
     });
   });
 });
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoiem9lbGluMTEyMiIsImEiOiJjbGdrN3VqZDMxOWo2M2ttbTJwbHJoeXRsIn0.x6dKFg8GYlnbkYZpDw0KyQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/zoelin1122/clgjt02r800kh01mkjriygo13',
+    zoom: 13,
+    center: [-73.97, 40.71]
+});
+
+let navigation = new mapboxgl.NavigationControl({
+    showCompass: false
+})
+
+// add the navigation to your map
+map.addControl(navigation, 'top-left')
+
+// create an instance of ScaleControl
+let scale = new mapboxgl.ScaleControl({
+    maxWidth: 80,
+    unit: 'imperial'
+})
+
+map.addControl(scale, 'bottom-right')
+
+map.on('load', function () {
+    map.addLayer({
+        'id': 'vendors',
+        'type': 'circle',
+        'source': {
+            'type': 'geojson',
+            'data': 'data/Vendors.geojson'
+        },
+        'paint': {
+            'circle-color': '#FF5F1F',
+            'circle-stroke-color': '#FF5F1F',
+            'circle-stroke-width': 0.5,
+            'circle-radius': 3
+        }
+    },)
+    map.addLayer({
+      'id': 'wholesalers',
+      'type': 'circle',
+      'source': {
+          'type': 'geojson',
+          'data': 'data/Wholesalers2005.geojson'
+      },
+      'paint': {
+          'circle-color': '#00FF00',
+          'circle-stroke-color': '#00FF00',
+          'circle-stroke-width': 0.5,
+          'circle-radius': 4
+      }
+  },)
+})
+
+map.on('click', 'vendors', function(e){
+    let name = e.features[0].properties["USER_Name"];
+    let type = e.features[0].properties["USER_Type"];
+    let address = e.features[0].properties["USER_Address"];
+
+    new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(type + '<br><h1>'+ name + '</h1> <br>' + address)
+        .addTo(map);
+});
+
+map.on('click', 'wholesalers', function(e){
+  let name = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Name"];
+  let type = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Type"];
+  let address = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Address"];
+
+  new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(type + '<br><h1>'+ name + '</h1> <br>' +  address)
+      .addTo(map);
+});
+
+map.on('mouseenter', 'vendors', function(){
+    map.getCanvas().style.cursor = 'pointer';
+});
+map.on('mouseleave', 'vendors', function(){
+    map.getCanvas().style.cursor = '';
+});
+
+map.on('mouseenter', 'wholesalers', function(){
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('mouseleave', 'wholesalers', function(){
+  map.getCanvas().style.cursor = '';
+});
+// // disable map zoom when using scroll
+// map.scrollZoom.disable();
+
+const layers = [
+  'Vendors',
+  'Wholesalers'
+];
+const colors = [
+  '#FF5F1F',
+  '#00FF00'
+];
+
+// create legend
+const legend = document.getElementById('legend');
+
+layers.forEach((layer, i) => {
+  const color = colors[i];
+  const item = document.createElement('div');
+  const key = document.createElement('span');
+  key.className = 'legend-key';
+  key.style.backgroundColor = color;
+
+  const value = document.createElement('span');
+  value.innerHTML = `${layer}`;
+  item.appendChild(key);
+  item.appendChild(value);
+  legend.appendChild(item);
+});
