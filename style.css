@@ -243,13 +243,13 @@ video{
 
 #ChangeVid {
   /* transition: all 2s ease-in-out; */
-  transition: all 3s ease;
+  transition: all 2s ease;
   margin: auto;
 }
 
 .diagram-wrapper {
   /* transition: all 2s ease-in-out; */
-  transition: all 3s ease;
+  transition: all 2s ease;
   margin: auto;
 }
 
