@@ -483,8 +483,8 @@ map.on('load', function () {
         },
         'paint': {
             'circle-color': '#FF5F1F',
-            'circle-stroke-color': '#FF5F1F',
-            'circle-stroke-width': 0.5,
+            'circle-stroke-color': '#fffef3',
+            'circle-stroke-width': 0.3,
             'circle-radius': 3
         }
     },)
@@ -497,8 +497,8 @@ map.on('load', function () {
       },
       'paint': {
           'circle-color': '#00FF00',
-          'circle-stroke-color': '#00FF00',
-          'circle-stroke-width': 0.5,
+          'circle-stroke-color': '#fffef3',
+          'circle-stroke-width': 0.3,
           'circle-radius': 4
       }
   },)
