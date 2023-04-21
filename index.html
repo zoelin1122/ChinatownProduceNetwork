@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CHINATOWN FOOD NETWORK</title>
+    <title>CHINATOWN PRODUCE NETWORK</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
@@ -12,7 +12,7 @@
   </head>
   <body>
      <div class="navbar">
-      <a class="navbar-title" href="#">CHINATOWN FOOD NETWORK</a>
+      <a class="navbar-title" href="#">CHINATOWN PRODUCE NETWORK</a>
       <div class="navbar-buttons">
         <button class="navbar-button">DATA</button>
         <button class="navbar-button">中文</button>
@@ -42,8 +42,34 @@
       <div class="banner">
         <img src="assets/Banner.png" alt="Image 1">
       </div>
-      <h1 class="title">CHINATOWN FOOD NETWORK: <br> A STORY OF FOOD, IMMIGRATION, ZONING, & INFORMALITY</h1>
-      
+      <div class="subsections">
+        <div class="subs">
+          <a href="#section-0">0_INTRODUCTION</a>
+        </div>
+        <div class="subs">
+          <a href="#section-1">1_MAPS</a>
+        </div>
+        <div class="subs">
+          <a href="#section-2">2_CHANGE</a>
+        </div>
+        <div class="subs">
+          <a href="#section-3">3_PEOPLE</a>
+        </div>
+        <div class="subs">
+          <a href="#section-4">4_TIMELINE</a>
+        </div>
+        <div class="subs">
+          <a href="#section-5">5_WHAT_HAPPENED</a>
+        </div>
+        <div class="subs">
+          <a href="#section-6">6_FUTURE</a>
+        </div>
+      </div>
+
+      <h1 class="title">The Bittersweet Harvest: Navigating Manhattan Chinatown's Changing Produce Network
+        <br> <a class="byline">A love letter to Chinatown by Zoe Lin, April 26 2023</p></a>
+      </h1>
+  
       
       <section id="intro">
         <div class="fruit-container">
@@ -51,16 +77,28 @@
             <div class="fruit" id="root" style="margin-top:50px; width: 100%; height: 100%;"></div>
           </div>
           <div class="scroll-div">
-            <h1>Introfruit</h1>
             <div class="text">
-              This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
-
-              Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
-          
-              Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
-          
-              In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
-        
+              <p>
+                In my family, showing love didn't always involve saying the words out loud. Instead, my parents would cut me plates of fruit.
+              </p><p>
+                Apples shaped like bunnies, and strawberries shaped like hearts.<br><br>*
+              </p><p>
+                Every Chinese New Year, we filled the house with mandarin oranges as we waited for red packets, 
+              </p><p>
+                A symbol of good luck and prosperity for the year ahead.<br><br>*
+              </p><p>
+                And when we celebrated Mid-Autumn Festival in my grandmother's backyard,
+              </p><p>
+                We wore obnoxious hats made of pomelo rinds in hopes that the Moon Lady would see us better then.<br><br>*
+              </p><p>
+                Even in times of mourning, we honor our loved ones with fruit offerings at funerals and tomb sweepings.
+              </p><p>
+                Expensive pears, the size of my head, heavy in my hands. <br><br>*
+              </p><p>
+                In my culture, fruit is more than just food. 
+              </p><p>
+                It is a symbol of love, prosperity, and reverence.
+              </p>
             </div>
           </div>
         </div>
@@ -68,89 +106,33 @@
       </section>
 
       
-      <section id="intro">
+      <section id="section-0">
         <div class="article">
-          <h1>Chinatown's Food Network</h1>
-          This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
-
-          Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
-          
-          Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
-          
-          In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
-        </div>
-      </section>
-
-      <div class="map-container">
-        <div id='map'></div>
-        <!-- <script type='text/javascript' src="map.js"></script>         -->
-        <div class='map-overlay' id='features'>
-          <h2>Manhattan Chinatown's Produce Network in 2005</h2>
-          <div id='pd'><p>Hover over a point!</p></div></div>
-        <div class='map-overlay' id='legend'></div>
-      </div>
-
-      <section id="text">
-        <div class="article">
-          <h1>Chinatown's Food Network</h1>
-          This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
-
-          Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
-          
-          Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
-          
-          In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
-        </div>
-      </section>
-
-      <!-- <section id="typologies">
-        <h1>Typologies of Nodes</h1>
-        <div class="carousel">
-          <div class="carousel-items">
-            <div class="carousel-item">
-              <div class= "video-container">
-                <video style ='width: 100%; height: auto;' muted loop>
-                  <source src="assets/Boxes2s.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="carousel-item2">BOXES</div>
-            </div>
-            <div class="carousel-item" style ='padding: 0 20px;'>
-                <div class= "video-container" >
-                  <video style ='width: 100%; height: auto;' muted loop>
-                    <source src="assets/Table2s.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item2" style="margin: 0 -20px;">TABLE</div>
-            </div>
-            <div class="carousel-item">
-              <div class= "video-container">
-                <video style ='width: 100%; height: auto;' muted loop>
-                  <source src="assets/Cart2s.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="carousel-item2">CART</div>
-            </div>
-            <div class="carousel-item">
-              <div class= "video-container">
-                <video style ='width: 100%; height: auto;' muted loop>
-                  <source src="assets/Boxes2s.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="carousel-item2">BOXES</div>
-            </div>
-            <div class="carousel-item">
-              <div class= "video-container">
-                <video style ='width: 100%; height: auto;' muted loop>
-                  <source src="assets/Boxes2s.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="carousel-item2">BOXES</div>
-            </div>
+          <div class="left-child subtitle">
+            <p>0_INTRODUCTION</p>
+            <br>
+            <p class="quote">"We bought the land where there were already longan trees" -- A Malaysian farmer specializing in East Asian Produce</p>
+          </div>
+          <div class="right-child">
+          </cdp>
+            <p>
+              Nestled in the heart of Lower Manhattan, Manhattan Chinatown has long been a hub of cultural and economic activity. One of its most iconic features is its bustling produce market, drawing customers from all over the city. But behind the bustling storefronts and street vendors lies a thriving network of produce suppliers that is vital to the local food ecosystem.
+            </p><p>
+              For years, small-scale produce wholesalers in Chinatown have been connecting farmers and distributors with consumers, creating a dynamic and diverse food landscape that has become a cornerstone of the community. From fresh produce to specialty herbal medicine, these vendors and wholesaler play a critical role in ensuring that local residents have access to healthy, affordable, and culturally sensitive food options.
+            </p><p>
+              But the benefits of Chinatown's produce network extend far beyond just the local community. By supporting small-scale farmers and distributors, the network helps to build a more resilient and sustainable food system for all.
+            </p><p>
+              However, this vibrant network of vendors and suppliers is facing significant challenges in today's rapidly changing landscape. 
+              Gentrification, upzoning, immigration policies, and other outside forces are threatening to diminish the vitality of this historic marketplace. 
+              Yet, despite these challenges, the produce market remains a symbol of resilience and strength, a testament to the tenacity of the people who call Manhattan Chinatown home.
+              It is important to remember the agency of the ethnic enclave in this change, as they seek to develop and adapt to different industries. 
+            </p><p>
+              In this love letter to Manhattan Chinatown's produce markets, I explore the historical significance, present challenges, and future possibilities of this unique cultural and economic institution.
+            </p>
           </div>
         </div>
-      </section> -->
-      
+      </section>
+
       <section id="typologies2">
         <!-- <div class="grid-container">
           <div class="grid-item"></div>
@@ -160,7 +142,6 @@
           <div class="grid-item"></div>
           <div class="grid-item"></div>
         </div> -->
-        <h1>Typologies of Nodes</h1>
         <div class="table">
           <div class="row">
             <div class="cell" id="cell1">
@@ -217,16 +198,104 @@
         </table> -->
       </section>
 
+
+      <section id="section-1">
+        <div class="article">
+          <div class="left-child subtitle">
+            <p>1_SPATIAL DISTRIBUTION: <br> NODES & EDGES</p>
+            <br>
+            <p class="quote">"We bought the land where there were already longan trees" -- A Malaysian farmer specializing in East Asian Produce</p>
+          </div>
+          <div class="right-child">
+          </cdp>
+            <p>This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
+
+            </p><p>Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
+          
+            </p><p>Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
+          
+            </p><p>In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="map-container">
+        <div id='map'></div>
+        <!-- <script type='text/javascript' src="map.js"></script>         -->
+        <div class='map-overlay' id='features'>
+          <h2>Manhattan Chinatown's Produce Network in 2005</h2>
+          <div id='pd'><p>Hover over a point!</p></div></div>
+        <div class='map-overlay' id='legend'></div>
+      </div>
+
+      
+
+      <!-- <section id="typologies">
+        <h1>Typologies of Nodes</h1>
+        <div class="carousel">
+          <div class="carousel-items">
+            <div class="carousel-item">
+              <div class= "video-container">
+                <video style ='width: 100%; height: auto;' muted loop>
+                  <source src="assets/Boxes2s.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item2">BOXES</div>
+            </div>
+            <div class="carousel-item" style ='padding: 0 20px;'>
+                <div class= "video-container" >
+                  <video style ='width: 100%; height: auto;' muted loop>
+                    <source src="assets/Table2s.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item2" style="margin: 0 -20px;">TABLE</div>
+            </div>
+            <div class="carousel-item">
+              <div class= "video-container">
+                <video style ='width: 100%; height: auto;' muted loop>
+                  <source src="assets/Cart2s.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item2">CART</div>
+            </div>
+            <div class="carousel-item">
+              <div class= "video-container">
+                <video style ='width: 100%; height: auto;' muted loop>
+                  <source src="assets/Boxes2s.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item2">BOXES</div>
+            </div>
+            <div class="carousel-item">
+              <div class= "video-container">
+                <video style ='width: 100%; height: auto;' muted loop>
+                  <source src="assets/Boxes2s.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item2">BOXES</div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      
+
       <section id="intro">
         <div class="article">
-          <h1>Chinatown's Food Network</h1>
-          This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
+          <div class="left-child subtitle">
+            <p>0_INTRODUCTION</p>
+            <br>
+            <p class="quote">"We bought the land where there were already longan trees" -- A Malaysian farmer specializing in East Asian Produce</p>
+          </div>
+          <div class="right-child">
+          </cdp>
+            <p>This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
 
-          Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
+            </p><p>Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
           
-          Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
+            </p><p>Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
           
-          In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
+            </p><p>In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.</p>
+          </div>
         </div>
       </section>
 
@@ -244,14 +313,21 @@
 
       <section id="intro">
         <div class="article">
-          <h1>Google Streetview</h1>
-          This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
+          <div class="left-child subtitle">
+            <p>0_INTRODUCTION</p>
+            <br>
+            <p class="quote">"We bought the land where there were already longan trees" -- A Malaysian farmer specializing in East Asian Produce</p>
+          </div>
+          <div class="right-child">
+          </cdp>
+            <p>This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
 
-          Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
+            </p><p>Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
           
-          Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
+            </p><p>Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
           
-          In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
+            </p><p>In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.</p>
+          </div>
         </div>
       </section>
 
@@ -278,7 +354,6 @@
 
       <section id="people2">
         <div class="parallax-container">
-          <h1>People: The Social Network of Care</h1>
           <div class = "parallax">
             <div id="dragableprofile-container" class="parallax__group">
               <div class="dragableprofile bobbing-div" id="profile1">
@@ -309,14 +384,21 @@
 
       <section id="intro">
         <div class="article">
-          <h1>People: The Social Network of Care</h1>
-          This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
+          <div class="left-child subtitle">
+            <p>0_INTRODUCTION</p>
+            <br>
+            <p class="quote">"We bought the land where there were already longan trees" -- A Malaysian farmer specializing in East Asian Produce</p>
+          </div>
+          <div class="right-child">
+          </cdp>
+            <p>This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
 
-          Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
+            </p><p>Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
           
-          Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
+            </p><p>Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
           
-          In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
+            </p><p>In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.</p>
+          </div>
         </div>
       </section>
 
@@ -364,16 +446,22 @@
 
       <section id="intro">
         <div class="article">
-          <h1>People: The Social Network of Care</h1>
-          This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
+          <div class="left-child subtitle">
+            <p>0_INTRODUCTION</p>
+            <br>
+            <p class="quote">"We bought the land where there were already longan trees" -- A Malaysian farmer specializing in East Asian Produce</p>
+          </div>
+          <div class="right-child">
+          </cdp>
+            <p>This is sample text. Fruits hold great significance in Chinese culture, not only for their nutritional value but also for their symbolism and cultural traditions. Certain fruits are considered auspicious and are often served during special occasions, such as weddings and Lunar New Year celebrations. For example, oranges are a symbol of good luck and prosperity, while pomelos represent abundance and success.
 
-          Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
+            </p><p>Fruits are also an important part of traditional Chinese medicine, where they are used for their healing properties. For instance, goji berries are believed to boost the immune system and improve vision, while lychees are used to treat coughs and fevers.
           
-          Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
+            </p><p>Moreover, fruits play a significant role in Chinese art and literature. They are often depicted in paintings and poems, with each fruit representing different qualities and emotions. For instance, the peach symbolizes longevity and immortality, while the pomegranate represents fertility and abundance.
           
-          In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.
+            </p><p>In summary, fruits are deeply embedded in Chinese culture, not only for their health benefits but also for their symbolic meaning and cultural significance.</p>
+          </div>
         </div>
-        <h1>DIAGRAM TOPICs</h1>
       </section>
 
 
@@ -401,7 +489,9 @@
         </g></svg>
         </div>
     </div>
-    <div style="height: 20vh;"></div>
+    <div class="banner">
+      <img src="assets/Banner.png" alt="Image 1">
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
