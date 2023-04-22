@@ -69,10 +69,15 @@ document.addEventListener("mousemove", function(event) {
   var x = event.clientX;
   var y = event.clientY;
   var mid = (window.innerWidth)/2;
+  var full = window.innerWidth;
+
   document.querySelectorAll('.text-box').forEach(textBox => {
     if (x>mid){
-      textBox.style.left = (x-300) + "px";
+      console.log(full-x);
+      textBox.style.removeProperty("left");
+      textBox.style.right = (full-x-100) + "px";
     } else {
+      textBox.style.removeProperty("right");
       textBox.style.left = (x-100) + "px";
     }
     textBox.style.top = (y-top-10) + "px";

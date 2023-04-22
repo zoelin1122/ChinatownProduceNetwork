@@ -700,8 +700,6 @@ video{
 .text-box {
   background: #000000bf;
   position: absolute;
-  top: 0;
-  left: 0;
   padding: 2%;
   color: #fffef3;
   font-size: .8em;
