@@ -352,6 +352,8 @@ const profile1 = document.getElementById("profile1");
 const profile2 = document.getElementById("profile2");
 const profile3 = document.getElementById("profile3");
 const profile4 = document.getElementById("profile4");
+const windowheight = window.innerHeight;
+const windowwidth = window.innerWidth;
 
 // Prallax Set the initial positions of the profiles
 // profile1.style.left = "210px";
@@ -364,13 +366,13 @@ const profile4 = document.getElementById("profile4");
 // profile4.style.top = "400px";
 
 // Set the initial positions of the profiles
-profile1.style.left = "10px";
+profile1.style.left = (windowwidth/4)*0.02+"px";
 profile1.style.top = "100px";
-profile2.style.left = "870px";
+profile2.style.left = (windowwidth/4)*2.6+"px";
 profile2.style.top = "280px";
-profile3.style.left = "600px";
+profile3.style.left = (windowwidth/4)*1.7+"px";
 profile3.style.top = "0px";
-profile4.style.left = "360px";
+profile4.style.left = (windowwidth/4)+"px";
 profile4.style.top = "330px";
 
 
