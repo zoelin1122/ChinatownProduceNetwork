@@ -80,7 +80,7 @@ document.addEventListener("mousemove", function(event) {
       textBox.style.removeProperty("right");
       textBox.style.left = (x-100) + "px";
     }
-    textBox.style.top = (y-top*2) + "px";
+    textBox.style.top = (y-200) + "px";
   });
   
 });

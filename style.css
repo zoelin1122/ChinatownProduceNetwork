@@ -489,6 +489,7 @@ video{
   font-size: 16px;
   margin-top: 5px;
   margin-bottom: 0;
+  background-color: #fffef3b1;
 }
 
 .dragableprofile p {
@@ -794,3 +795,42 @@ video{
   margin-right: 5px;
 }
 
+.inner-nav {
+  overflow: hidden;
+  background-color: inherit;
+  width: 90vw;
+  height: auto;
+  padding: 10px 5vw;
+  transition: all 0.3s ease-in-out;
+}
+.diagram-wrapper .inner-nav {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.inner-nav button {
+  background-color: inherit;
+  border: none;
+  color: black;
+  padding: 25px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.Back{
+  float: left;
+}
+
+.Next{
+  float: right;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
