@@ -1,3 +1,24 @@
+const navbar = document.querySelector('.navbar');
+const navbartitle = document.querySelector('.navbar-title');
+const navbarbuttons = document.querySelectorAll('.navbar-button');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > navbar.offsetHeight) {
+    navbar.classList.add('small');
+    navbartitle.classList.add('small');
+    navbarbuttons.forEach(navbarbutton => {
+      navbarbutton.classList.add('small');
+    })
+  } else {
+    navbar.classList.remove('small');
+    navbartitle.classList.remove('small');
+    navbarbuttons.forEach(navbarbutton => {
+      navbarbutton.classList.remove('small');
+    })
+  }
+});
+
 window.addEventListener("scroll", function() {
   var windowTop = window.pageYOffset;
   var windowBottom = windowTop + window.innerHeight;
