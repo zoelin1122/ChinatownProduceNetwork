@@ -831,3 +831,11 @@ button:hover {
   background-color: black;
   color: white;
 }
+
+.span{
+  font-size: x-small;
+  font-weight: 100;
+  font-style: italic;
+  line-height: normal;
+  text-align: right;
+}
