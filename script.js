@@ -481,6 +481,48 @@ let scale = new mapboxgl.ScaleControl({
 map.addControl(scale, 'bottom-right')
 
 map.on('load', function () {
+    // map.addLayer({
+    //   'id': 'food-insecurity',
+    //   'type': 'fill',
+    //   'source': {
+    //       'type': 'geojson',
+    //       'data': 'data/foodinsecure.geojson'
+    //   },
+    //   'paint': {
+    //       // 'fill-color': '#00FF00'
+    //       // ['step', ['get', 'MHHI'],
+    //       //     '#ffffff',
+    //       //     20000, '#ccedf5',
+    //       //     50000, '#99daea',
+    //       //     75000, '#66c7e0',
+    //       //     100000, '#33b5d5',
+    //       //     150000, '#00a2ca'],
+    //       // 'fill-opacity': ['case', ['==', ['get', 'MHHI'], null], 0, 0.65]
+    //   },
+    //   'layout': {
+    //     // Make the layer visible by default.
+    //     'visibility': 'visible'
+    //     }
+    
+    // },);
+
+    map.addLayer({
+      'id': 'zoned for wholesale',
+      'type': 'fill',
+      'source': {
+          'type': 'geojson',
+          'data': 'data/zoned_for_wholesale.geojson'
+      },
+      'paint': {
+          'fill-color': '#00FF00',
+          'fill-opacity': 0.15
+      },
+      'layout': {
+        // Make the layer visible by default.
+        'visibility': 'visible'
+        }
+    },);
+
     map.addLayer({
         'id': 'vendors',
         'type': 'circle',
@@ -489,12 +531,40 @@ map.on('load', function () {
             'data': 'data/Vendors.geojson'
         },
         'paint': {
-            'circle-color': '#FF5F1F',
+            // 'circle-color': '#FF5F1F',
             'circle-stroke-color': '#fffef3',
-            'circle-stroke-width': 0.3,
-            'circle-radius': 3
-        }
+            'circle-stroke-width': 0.1,
+            'circle-radius': {
+              'base': 1.75,
+              'stops': [
+              [12, 2],
+              [22, 180]
+              ]
+            },
+            // Color circles by ethnicity, using a `match` expression.
+            'circle-color': [
+              'match',
+              ['get', 'USER_Type'],
+              'makeshift',
+              '#b9560b',
+              'table',
+              '#da4e09',
+              'cart',
+              '#f75306',
+              'storefront',
+              '#f97a17',
+              'store',
+              '#f97a17',
+              //large markets
+              '#f6b35d'
+              ]
+        },
+        'layout': {
+          // Make the layer visible by default.
+          'visibility': 'visible'
+          }
     },)
+
     map.addLayer({
       'id': 'wholesalers',
       'type': 'circle',
@@ -506,8 +576,18 @@ map.on('load', function () {
           'circle-color': '#00FF00',
           'circle-stroke-color': '#fffef3',
           'circle-stroke-width': 0.3,
-          'circle-radius': 4
-      }
+          'circle-radius': {
+            'base': 1.75,
+            'stops': [
+            [12, 3],
+            [22, 180]
+            ]
+          }  
+      },
+      'layout': {
+        // Make the layer visible by default.
+        'visibility': 'visible'
+        }
   },)
 })
 
@@ -574,3 +654,57 @@ layers.forEach((layer, i) => {
   item.appendChild(value);
   legend.appendChild(item);
 });
+
+// After the last frame rendered before the map enters an "idle" state.
+map.on('idle', () => {
+  // If these two layers were not added to the map, abort
+  if (!map.getLayer('vendors') || !map.getLayer('wholesalers')|| !map.getLayer('zoned for wholesale')) {
+  return;
+  }
+   
+  // Enumerate ids of the layers.
+  const toggleableLayerIds = ['vendors', 'wholesalers','zoned for wholesale'];
+   
+  // Set up the corresponding toggle button for each layer.
+  for (const id of toggleableLayerIds) {
+  // Skip layers that already have a button set up.
+  if (document.getElementById(id)) {
+  continue;
+  }
+   
+  // Create a link.
+  const link = document.createElement('a');
+  link.id = id;
+  link.href = '#';
+  link.textContent = id;
+  link.className = 'active';
+   
+  // Show or hide layer when the toggle is clicked.
+  link.onclick = function (e) {
+  const clickedLayer = this.textContent;
+  e.preventDefault();
+  e.stopPropagation();
+   
+  const visibility = map.getLayoutProperty(
+  clickedLayer,
+  'visibility'
+  );
+   
+  // Toggle layer visibility by changing the layout object's visibility property.
+  if (visibility === 'visible') {
+  map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+  this.className = '';
+  } else {
+  this.className = 'active';
+  map.setLayoutProperty(
+  clickedLayer,
+  'visibility',
+  'visible'
+  );
+  }
+  };
+   
+  const layers = document.getElementById('menu');
+  layers.appendChild(link);
+  }
+  });
