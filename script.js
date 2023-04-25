@@ -623,28 +623,20 @@ map.on('load', function () {
           // Make the layer visible by default.
           'visibility': 'visible'
           },
+        'filter': ['==', ['string', ['get', '2006']], "1"] 
     },)
 
-    document.getElementById('year').addEventListener('input', (event) => {
-      const year = parseInt(event.target.value).toString();
-      console.log(year)
-      // update the map
-      map.setFilter('Vendors', ['==', ['string', ['get', year]], "1"]);
-    
-      // update text in the UI
-      document.getElementById('active-year').innerText = year;
-    });
 
     map.addLayer({
       'id': 'Wholesalers',
       'type': 'circle',
       'source': {
           'type': 'geojson',
-          'data': 'data/Wholesalers2005.geojson'
+          'data': 'data/Wholesale_Year.geojson'
       },
       'paint': {
           'circle-color': '#00FF00',
-          'circle-stroke-color': '#fffef3',
+          'circle-stroke-color': '#000',
           'circle-stroke-width': 0.3,
           'circle-radius': {
             'base': 1.75,
@@ -657,9 +649,23 @@ map.on('load', function () {
       'layout': {
         // Make the layer visible by default.
         'visibility': 'visible'
-        }
+        },
+      'filter': ['==', ['string', ['get', '2006']], "1"] 
   },)
 })
+
+
+document.getElementById('year').addEventListener('input', (event) => {
+  const year = parseInt(event.target.value).toString();
+  console.log(year)
+  // update the map
+  map.setFilter('Vendors', ['==', ['string', ['get', year]], "1"]);
+  map.setFilter('Wholesalers', ['==', ['string', ['get', year]], "1"]);
+
+
+  // update text in the UI
+  document.getElementById('active-year').innerText = " " + year;
+});
 
 // const layers = [
 //  "Vendors",
