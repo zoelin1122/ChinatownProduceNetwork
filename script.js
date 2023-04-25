@@ -684,7 +684,7 @@ map.on('mouseleave', 'Wholesalers', function(){
   map.getCanvas().style.cursor = '';
 });
 // // disable map zoom when using scroll
-// map.scrollZoom.disable();
+map.scrollZoom.disable();
 
 
 // After the last frame rendered before the map enters an "idle" state.
@@ -742,8 +742,6 @@ map.on('idle', () => {
    
   const menus = document.getElementById('menu');
   menus.appendChild(link);
-
-  
 
   }
   });
