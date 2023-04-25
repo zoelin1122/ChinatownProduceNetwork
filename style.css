@@ -934,3 +934,8 @@ button:hover {
     background: rgba(255, 254, 243, 0.68);
     cursor: pointer;
   }
+
+  .mapboxgl-popup-content img{
+    width:100%;
+    height:auto;
+  }

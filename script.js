@@ -478,37 +478,8 @@ let scale = new mapboxgl.ScaleControl({
     unit: 'imperial'
 })
 
-map.addControl(scale, 'bottom-right')
+map.addControl(scale, 'top-left')
 
-// const years = [
-//   '2006',
-//   '2007',
-//   '2008',
-//   '2009',
-//   '2010',
-//   '2011',
-//   '2012',
-//   '2013',
-//   '2014',
-//   '2015',
-//   '2016',
-//   '2017',
-//   '2018',
-//   '2019',
-//   '2020',
-//   '2021',
-//   '2022',
-//   '2023'
-//   ];
-   
-//   function filterBy(year) {
-//   const filters = ['==', 'month', year];
-//   map.setFilter('earthquake-circles', filters);
-//   map.setFilter('earthquake-labels', filters);
-   
-//   // Set the label to the month
-//   document.getElementById('year').textContent = years[year];
-//   }
 
 map.on('load', function () {
     map.addLayer({
@@ -552,7 +523,7 @@ map.on('load', function () {
       },
       'paint': {
           'fill-color': '#00FF00',
-          'fill-opacity': 0.15
+          'fill-opacity': 0.12
       },
       'layout': {
         // Make the layer visible by default.
@@ -695,24 +666,24 @@ document.getElementById('year').addEventListener('input', (event) => {
 
 
 map.on('click', 'Vendors', function(e){
-    let name = e.features[0].properties["USER_Name"];
-    let type = e.features[0].properties["USER_Type"];
-    let address = e.features[0].properties["USER_Address"];
+    let name = e.features[0].properties["Name"];
+    let type = e.features[0].properties["Type"];
+    let address = e.features[0].properties["Match_addr"];
 
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
-        .setHTML(type + '<br><h1>'+ name + '</h1> <br>' + address)
+        .setHTML(type + '<h2>'+ name + "</h2> <img src= 'assets/web/"+name+".jpg'><br>" + address)
         .addTo(map);
 });
 
 map.on('click', 'Wholesalers', function(e){
-  let name = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Name"];
-  let type = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Type"];
-  let address = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Address"];
+  let name = e.features[0].properties["Name"];
+  let type = e.features[0].properties["Type"];
+  let address = e.features[0].properties["Address"];
 
   new mapboxgl.Popup()
       .setLngLat(e.lngLat)
-      .setHTML(type + '<br><h1>'+ name + '</h1> <br>' +  address)
+      .setHTML(type + '<br><h1>'+ name + "</h1> <img src= 'assets/ws/"+name+".jpg'><br>" +  address)
       .addTo(map);
 });
 
