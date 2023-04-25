@@ -481,33 +481,40 @@ let scale = new mapboxgl.ScaleControl({
 map.addControl(scale, 'bottom-right')
 
 map.on('load', function () {
-    // map.addLayer({
-    //   'id': 'food-insecurity',
-    //   'type': 'fill',
-    //   'source': {
-    //       'type': 'geojson',
-    //       'data': 'data/foodinsecure.geojson'
-    //   },
-    //   'paint': {
-    //       // 'fill-color': '#00FF00'
-    //       // ['step', ['get', 'MHHI'],
-    //       //     '#ffffff',
-    //       //     20000, '#ccedf5',
-    //       //     50000, '#99daea',
-    //       //     75000, '#66c7e0',
-    //       //     100000, '#33b5d5',
-    //       //     150000, '#00a2ca'],
-    //       // 'fill-opacity': ['case', ['==', ['get', 'MHHI'], null], 0, 0.65]
-    //   },
-    //   'layout': {
-    //     // Make the layer visible by default.
-    //     'visibility': 'visible'
-    //     }
+    map.addLayer({
+      'id': 'Food insecurity',
+      'type': 'fill',
+      'source': {
+          'type': 'geojson',
+          'data': 'data/foodsecure.geojson'
+      },
+      'paint': {
+          'fill-color': //'#00FF00'
+          ['step', ['get', 'Food Insecure (% of residents)'],
+              '#ffffff',
+              9, '#FFF5EB',
+              14, '#FDD0A2',
+              20, '#FD8D3C',
+              27, '#D94801',
+              55, '#7F2704'],
+          'fill-opacity': ['case', ['==', ['get', 'Food Insecure (% of residents)'], null], 0,
+          ['step', ['get', 'Food Insecure (% of residents)'],
+          0,
+          9, 0.05,
+          14, 0.2,
+          20, 0.3,
+          27, 0.4,
+          55, 0.5]]
+      },
+      'layout': {
+        // Make the layer visible by default.
+        'visibility': 'none'
+        }
     
-    // },);
+    },);
 
     map.addLayer({
-      'id': 'zoned for wholesale',
+      'id': 'Zoned for wholesale',
       'type': 'fill',
       'source': {
           'type': 'geojson',
@@ -524,7 +531,30 @@ map.on('load', function () {
     },);
 
     map.addLayer({
-        'id': 'vendors',
+      'id': 'Congestion pricing boundary',
+      'type': 'line',
+      'source': {
+          'type': 'geojson',
+          'data': 'data/Congestion_pricing.geojson'
+      },
+      'paint': {
+          'line-color': '#FF0000',
+          'line-width': {
+            'base': 1,
+            'stops': [
+            [12, 1],
+            [22, 3]
+            ]}
+      },
+      'layout': {
+        // Make the layer visible by default.
+        'visibility': 'none'
+        }
+    },);
+
+
+    map.addLayer({
+        'id': 'Vendors',
         'type': 'circle',
         'source': {
             'type': 'geojson',
@@ -566,7 +596,7 @@ map.on('load', function () {
     },)
 
     map.addLayer({
-      'id': 'wholesalers',
+      'id': 'Wholesalers',
       'type': 'circle',
       'source': {
           'type': 'geojson',
@@ -591,7 +621,34 @@ map.on('load', function () {
   },)
 })
 
-map.on('click', 'vendors', function(e){
+// const layers = [
+//  "Vendors",
+//  "Wholesalers"
+// ];
+// const colors = [
+//   '#b9560b',
+//   '#fffef3'
+// ];
+
+// // create legend
+// const legend = document.getElementById('legend');
+
+// layers.forEach((layer, i) => {
+//   const color = colors[i];
+//   const item = document.createElement('div');
+//   const key = document.createElement('span');
+//   key.className = 'legend-key';
+//   key.style.backgroundColor = color;
+
+//   const value = document.createElement('span');
+//   value.innerHTML = `${layer}`;
+//   item.appendChild(key);
+//   item.appendChild(value);
+//   legend.appendChild(item);
+// });
+
+
+map.on('click', 'Vendors', function(e){
     let name = e.features[0].properties["USER_Name"];
     let type = e.features[0].properties["USER_Type"];
     let address = e.features[0].properties["USER_Address"];
@@ -602,7 +659,7 @@ map.on('click', 'vendors', function(e){
         .addTo(map);
 });
 
-map.on('click', 'wholesalers', function(e){
+map.on('click', 'Wholesalers', function(e){
   let name = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Name"];
   let type = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Type"];
   let address = e.features[0].properties["Wholesalers200_GeocodeAddres2.USER_Address"];
@@ -613,57 +670,32 @@ map.on('click', 'wholesalers', function(e){
       .addTo(map);
 });
 
-map.on('mouseenter', 'vendors', function(){
+map.on('mouseenter', 'Vendors', function(){
     map.getCanvas().style.cursor = 'pointer';
 });
-map.on('mouseleave', 'vendors', function(){
+map.on('mouseleave', 'Vendors', function(){
     map.getCanvas().style.cursor = '';
 });
 
-map.on('mouseenter', 'wholesalers', function(){
+map.on('mouseenter', 'Wholesalers', function(){
   map.getCanvas().style.cursor = 'pointer';
 });
-map.on('mouseleave', 'wholesalers', function(){
+map.on('mouseleave', 'Wholesalers', function(){
   map.getCanvas().style.cursor = '';
 });
 // // disable map zoom when using scroll
 // map.scrollZoom.disable();
 
-const layers = [
-  'Vendors',
-  'Wholesalers'
-];
-const colors = [
-  '#FF5F1F',
-  '#00FF00'
-];
-
-// create legend
-const legend = document.getElementById('legend');
-
-layers.forEach((layer, i) => {
-  const color = colors[i];
-  const item = document.createElement('div');
-  const key = document.createElement('span');
-  key.className = 'legend-key';
-  key.style.backgroundColor = color;
-
-  const value = document.createElement('span');
-  value.innerHTML = `${layer}`;
-  item.appendChild(key);
-  item.appendChild(value);
-  legend.appendChild(item);
-});
 
 // After the last frame rendered before the map enters an "idle" state.
 map.on('idle', () => {
-  // If these two layers were not added to the map, abort
-  if (!map.getLayer('vendors') || !map.getLayer('wholesalers')|| !map.getLayer('zoned for wholesale')) {
+  // If these two layers were not added to the map, abort 
+  if (!map.getLayer('Vendors') || !map.getLayer('Wholesalers')|| !map.getLayer('Zoned for wholesale')|| !map.getLayer('Food insecurity')|| !map.getLayer('Congestion pricing boundary')) {
   return;
   }
    
   // Enumerate ids of the layers.
-  const toggleableLayerIds = ['vendors', 'wholesalers','zoned for wholesale'];
+  const toggleableLayerIds = ['Vendors', 'Wholesalers','Zoned for wholesale', 'Food insecurity','Congestion pricing boundary'];
    
   // Set up the corresponding toggle button for each layer.
   for (const id of toggleableLayerIds) {
@@ -677,7 +709,11 @@ map.on('idle', () => {
   link.id = id;
   link.href = '#';
   link.textContent = id;
-  link.className = 'active';
+  if ((link.id != 'Food insecurity')&&(link.id != 'Congestion pricing boundary')){
+    link.className = 'active';
+  };
+
+
    
   // Show or hide layer when the toggle is clicked.
   link.onclick = function (e) {
@@ -704,7 +740,10 @@ map.on('idle', () => {
   }
   };
    
-  const layers = document.getElementById('menu');
-  layers.appendChild(link);
+  const menus = document.getElementById('menu');
+  menus.appendChild(link);
+
+  
+
   }
   });
