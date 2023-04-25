@@ -480,6 +480,36 @@ let scale = new mapboxgl.ScaleControl({
 
 map.addControl(scale, 'bottom-right')
 
+// const years = [
+//   '2006',
+//   '2007',
+//   '2008',
+//   '2009',
+//   '2010',
+//   '2011',
+//   '2012',
+//   '2013',
+//   '2014',
+//   '2015',
+//   '2016',
+//   '2017',
+//   '2018',
+//   '2019',
+//   '2020',
+//   '2021',
+//   '2022',
+//   '2023'
+//   ];
+   
+//   function filterBy(year) {
+//   const filters = ['==', 'month', year];
+//   map.setFilter('earthquake-circles', filters);
+//   map.setFilter('earthquake-labels', filters);
+   
+//   // Set the label to the month
+//   document.getElementById('year').textContent = years[year];
+//   }
+
 map.on('load', function () {
     map.addLayer({
       'id': 'Food insecurity',
@@ -558,7 +588,7 @@ map.on('load', function () {
         'type': 'circle',
         'source': {
             'type': 'geojson',
-            'data': 'data/Vendors.geojson'
+            'data': 'data/Vendor_Years.geojson'
         },
         'paint': {
             // 'circle-color': '#FF5F1F',
@@ -574,7 +604,7 @@ map.on('load', function () {
             // Color circles by ethnicity, using a `match` expression.
             'circle-color': [
               'match',
-              ['get', 'USER_Type'],
+              ['get', 'Type'],
               'makeshift',
               '#b9560b',
               'table',
@@ -592,8 +622,18 @@ map.on('load', function () {
         'layout': {
           // Make the layer visible by default.
           'visibility': 'visible'
-          }
+          },
     },)
+
+    document.getElementById('year').addEventListener('input', (event) => {
+      const year = parseInt(event.target.value).toString();
+      console.log(year)
+      // update the map
+      map.setFilter('Vendors', ['==', ['string', ['get', year]], "1"]);
+    
+      // update text in the UI
+      document.getElementById('active-year').innerText = year;
+    });
 
     map.addLayer({
       'id': 'Wholesalers',
