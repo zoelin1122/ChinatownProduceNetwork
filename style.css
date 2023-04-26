@@ -944,6 +944,7 @@ button:hover {
     border-collapse: collapse;
     width: 80%;
     margin: 20px 10%;
+    font-family: 'Open Sans', sans-serif;
   }
   th, td {
     text-align: left;
