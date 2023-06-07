@@ -43,7 +43,7 @@ function App() {
     <Canvas camera={{ fov: 1, position: [1, -4, 7] }}>
       {/* <CameraControls makeDefault /> */}
       <OrbitControls enablePan={true} enableZoom={false} enableRotate={true} />
-      <Environment preset="dawn" />
+      <Environment files = "assets/kiara_1_dawn_1k.hdr" />
       <Suspense fallback={null}>
         <ScrollControls pages={3}>
           <Scene />
