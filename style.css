@@ -1004,3 +1004,9 @@ button:hover {
   justify-content: center;
   align-content: center;
 }
+
+.centered-div {
+  display: flex;
+  align-items: center; 
+  /* Add other styles as needed */
+}
