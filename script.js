@@ -1,3 +1,16 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+  // CODE FOR NON DESKTOP
+  const isMobile = /Mobile|webOS|iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  console.log(isMobile)
+    // Get the message container element
+  const messageContainer = document.getElementById('message-container')
+    // Display the message if user is using a mobile device
+  if (isMobile) {
+    messageContainer.style.display = 'flex';
+  }
+});
+
 var containerAnimate = document.querySelector(".containerAnimate");
 var images = [
   "frame1.jpg",
